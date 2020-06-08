@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "msjsdiag.debugger-for-chrome",
+    "davidanson.vscode-markdownlint",
+    "ms-vscode-remote.remote-containers",
+    "jpoissonnier.vscode-styled-components"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "operacoes-entre-conjuntos",
+  "dockerFile": "Dockerfile",
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "davidanson.vscode-markdownlint",
+    "jpoissonnier.vscode-styled-components"
+  ],
+  "settings": {
+    "terminal.integrated.shell.linux": "/usr/bin/fish"
+  },
+  "forwardPorts": [3000],
+  "postCreateCommand": "yarn",
+  "remoteUser": "node"
+}

@@ -1,0 +1,31 @@
+{
+  "extends": ["react-app", "airbnb-typescript-prettier"],
+  "plugins": ["import-helpers"],
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "rules": {
+    "no-bitwise": "off",
+    "import/order": "off",
+    "no-param-reassign": "off",
+    "no-unused-expressions": "off",
+    "import/prefer-default-export": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react/",
+          "module",
+          "/^evergreen-ui$/",
+          "/^~/",
+          ["parent", "sibling", "index"],
+          "//types$/"
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ]
+  }
+}

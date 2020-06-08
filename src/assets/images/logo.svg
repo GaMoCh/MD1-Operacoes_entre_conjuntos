@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 120 120">
+  <defs>
+    <filter id="filter1" x="0" y="0" width="1" height="1">
+      <feImage xlink:href="#set1" result="set1" />
+      <feImage xlink:href="#set2" result="set2" />
+      <feImage xlink:href="#set3" result="set3" />
+
+      <feBlend mode="color-dodge" in="set1" in2="backgroundImage" />
+      <feBlend mode="color-dodge" in="set2" in2="backgroundImage" />
+      <feBlend mode="color-dodge" in="set3" in2="backgroundImage" />
+    </filter>
+
+    <radialGradient id="gradient1">
+      <stop offset="0" stop-color="#735dd0" stop-opacity="0.4" />
+      <stop offset="1" stop-color="#37248f" stop-opacity="0.8" />
+    </radialGradient>
+
+    <radialGradient id="gradient2">
+      <stop offset="0" stop-color="#14b5d0" stop-opacity="0.4" />
+      <stop offset="1" stop-color="#007489" stop-opacity="0.8" />
+    </radialGradient>
+
+    <radialGradient id="gradient3">
+      <stop offset="0" stop-color="#1070ca" stop-opacity="0.4" />
+      <stop offset="1" stop-color="#084b8a" stop-opacity="0.8" />
+    </radialGradient>
+
+    <circle id="set1" cx="45" cy="75" r="30" fill="url(#gradient1)" />
+    <circle id="set2" cx="60" cy="45" r="30" fill="url(#gradient2)" />
+    <circle id="set3" cx="75" cy="75" r="30" fill="url(#gradient3)" />
+  </defs>
+  <rect width="120" height="120" fill="#f9f9fb" rx="40" />
+  <rect width="120" height="120" filter="url(#filter1)" />
+</svg>
