@@ -25,8 +25,7 @@ const actions: SetsActions = {
   },
   [SetsOperationsType.DIFFERENCE](setA, setB) {
     const source = sources[SetsOperationsType.DIFFERENCE](setA, setB);
-    // const values = new Set([...setA.values].filter((e) => ![...setB.values].includes(e)));
-    const values = new Set([]);
+    const values = new Set([...setA.values].filter((e) => !setB.values.has(e)));
     return { source, values };
   },
   [SetsOperationsType.POWER_SET](set) {
