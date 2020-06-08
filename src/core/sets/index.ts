@@ -7,8 +7,7 @@ import { SetsActions } from './types';
 const actions: SetsActions = {
   [SetsOperationsType.UNION](setA, setB) {
     const source = sources[SetsOperationsType.UNION](setA, setB);
-    // const values = new Set([...setA.values, ...setB.values]);
-    const values = new Set([]);
+    const values = new Set([...setA.values, ...setB.values]);
     return { source, values };
   },
   [SetsOperationsType.INTERSECTION](setA, setB) {
