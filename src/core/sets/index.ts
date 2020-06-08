@@ -13,8 +13,7 @@ const actions: SetsActions = {
   },
   [SetsOperationsType.INTERSECTION](setA, setB) {
     const source = sources[SetsOperationsType.INTERSECTION](setA, setB);
-    // const values = new Set([...setA.values].filter((e) => [...setB.values].includes(e)));
-    const values = new Set([]);
+    const values = new Set([...setA.values].filter((e) => setB.values.has(e)));
     return { source, values };
   },
   [SetsOperationsType.COMPLEMENT](set, universe) {
