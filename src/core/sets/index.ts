@@ -26,12 +26,12 @@ const actions: SetsActions = {
     return { source, values };
   },
   [SetsOperationsType.POWER_SET](set) {
-    // const getAllSubsets = (elements: string[]) =>
-    //   elements.reduce((sets, value) => sets.concat(sets.map((s) => [value, ...s])), [[]] as string[][]);
+    const getAllSubsets = (elements: string[]) =>
+      elements.reduce((sets, value) => sets.concat(sets.map((s) => [value, ...s])), [[]] as string[][]);
 
     const source = sources[SetsOperationsType.POWER_SET](set);
-    // const values = new Set(getAllSubsets([...set.values]).map((e) => `{${e.join(', ')}}`));
-    const values = new Set([]);
+    const values = new Set(getAllSubsets([...set.values]).map((e) => `{${e.join(', ')}}`));
+    // const values = new Set([]);
     return { source, values };
   },
 };
