@@ -27,7 +27,7 @@ const actions: SetsActions = {
   },
   [SetsOperationsType.POWER_SET](set) {
     const getAllSubsets = (elements: string[]) =>
-      elements.reduce((sets, value) => sets.concat(sets.map((s) => [value, ...s])), [[]] as string[][]);
+      elements.reduce((sets, value) => sets.concat(sets.map((s) => [...s, value])), [[]] as string[][]);
 
     const source = sources[SetsOperationsType.POWER_SET](set);
     const values = new Set(getAllSubsets([...set.values]).map((e) => `{${e.join(', ')}}`));
