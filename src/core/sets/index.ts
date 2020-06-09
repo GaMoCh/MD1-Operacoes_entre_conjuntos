@@ -17,7 +17,7 @@ const actions: SetsActions = {
   },
   [SetsOperationsType.COMPLEMENT](set, universe) {
     const source = sources[SetsOperationsType.COMPLEMENT](set);
-    const values = new Set([...universe.values].filter((e) => ![...set.values].includes(e)));
+    const values = new Set([...universe.values].filter((e) => !set.values.has(e)));
     return { source, values };
   },
   [SetsOperationsType.DIFFERENCE](setA, setB) {
@@ -31,7 +31,6 @@ const actions: SetsActions = {
 
     const source = sources[SetsOperationsType.POWER_SET](set);
     const values = new Set(getAllSubsets([...set.values]).map((e) => `{${e.join(', ')}}`));
-    // const values = new Set([]);
     return { source, values };
   },
 };
