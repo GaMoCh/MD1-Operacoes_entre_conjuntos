@@ -32,13 +32,21 @@ const DefaultSetsItem = ({ setKey }: Props) => {
               key: setKey,
               value: new Set(
                 values.map((value, i) => {
-                  if (value.includes(',') && i === values.length - 1) {
-                    value = `{${value
-                      .toLowerCase()
-                      .replace(/(^\s*,)|(,\s*$)/g, '')
-                      .split(',')
-                      .filter((e) => e.trim() !== '')
-                      .join(', ')}}`;
+                  if (i === values.length - 1) {
+                    value = value.replace(/^{\s*/, '{').replace(/\s*}$/, '}');
+                    if (value.includes(',')) {
+                      value = `{${[
+                        ...new Set(
+                          value
+                            .toLowerCase()
+                            .replace(/(^{)|(}$)/g, '')
+                            .replace(/(^\s*,\s*)|(,\s*$)/g, '')
+                            .split(',')
+                            .map((e) => e.trim())
+                            .filter((e) => e !== ''),
+                        ),
+                      ].join(', ')}}`;
+                    }
                   }
                   return value;
                 }),
