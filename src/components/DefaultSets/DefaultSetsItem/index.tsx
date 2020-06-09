@@ -48,7 +48,7 @@ const DefaultSetsItem = ({ setKey }: Props) => {
                       ].join(', ')}}`;
                     }
                   }
-                  return value;
+                  return value.toLowerCase();
                 }),
               ),
             },

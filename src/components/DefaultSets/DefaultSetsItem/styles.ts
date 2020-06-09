@@ -16,7 +16,7 @@ export const inputElements = css`
   margin: 0 ${majorScale(1)}px;
 
   & * {
-    /* text-transform: lowercase; */
+    text-transform: lowercase;
   }
 
   &::before,
