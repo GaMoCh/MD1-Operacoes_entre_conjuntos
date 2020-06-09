@@ -22,12 +22,6 @@ const messages = {
   setsLabel: 'Outros conjuntos',
   incrementButton: 'Adicionar novo conjunto',
   warning: {
-    universeEmpty: {
-      title: 'Tem certeza?',
-      body: 'Se o conjunto universo estiver vazio, a funcionalide "complementar" estará desabilitada.',
-      confirmLabel: 'Tenho',
-      cancelLabel: 'Não',
-    },
     setsEmpty: {
       title: 'Não esqueceu de algo?',
       body: 'Pelo menos um conjunto deve conter algum elemento.',
@@ -68,9 +62,6 @@ const DefaultSets = ({ callback }: Props) => {
           const setsValues = Object.values(sets) as SetType[];
           if (setsValues.every(({ values }) => values.size === 0)) {
             setSetsInputWarningData(messages.warning.setsEmpty);
-            setSetsInputWarningVisibility(true);
-          } else if (universe.values.size === 0) {
-            setSetsInputWarningData(messages.warning.universeEmpty);
             setSetsInputWarningVisibility(true);
           } else {
             callback();

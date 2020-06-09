@@ -13,7 +13,4 @@ const initialState: SetsState = {
   },
 };
 
-Object.defineProperty(initialState, 'universe', { configurable: false });
-Object.defineProperty(initialState, 'A', { configurable: false });
-
 export default initialState;

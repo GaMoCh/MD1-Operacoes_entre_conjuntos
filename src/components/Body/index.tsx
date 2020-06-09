@@ -94,7 +94,6 @@ const Body = () => {
           <Button
             key={i.toString()}
             appearance={operation === currentOperation ? 'primary' : 'default'}
-            disabled={operation === SetsOperationsType.COMPLEMENT && setsState.universe.values.size === 0}
             onClick={() => {
               setSetsInputValues(initialValue);
               setCurrentOperation(operation);
